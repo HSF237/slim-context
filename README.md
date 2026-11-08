@@ -5,12 +5,11 @@
 ### Keep the architecture. Drop the bloat. Stop paying the **Claude Code Token Tax.**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-6c5ce7.svg)](./LICENSE)
-[![Claude Code Skill](https://img.shields.io/badge/Claude_Code-Skill-D97757.svg)](https://claude.com/product/claude-code)
+[![Claude Code Skill](https://img.shields.io/badge/Claude_Code-Skill-D97757.svg)](#-installation)
 [![Dependencies](https://img.shields.io/badge/Dependencies-0-brightgreen.svg)](#-installation)
 [![Estimated Savings](https://img.shields.io/badge/Estimated_Savings-30--50%25-22c55e.svg)](#-how-it-works)
 
-A single-file [Claude Code](https://claude.com/product/claude-code) skill that cuts context-window
-burn by an estimated **30–50%** in large repositories — no hooks, no servers, no config.
+A single-file skill that cuts context-window burn by an estimated **30–50%** in large repositories — no hooks, no servers, no config.
 
 [🚀 Installation](#-installation) · [🧪 Smoke Test](#-60-second-smoke-test) · [🎬 Example Usage](#-example-usage) · [🧠 How It Works](#-how-it-works) · [❓ FAQ](#-faq)
 
@@ -59,45 +58,23 @@ moment — and bills that scale with **noise** instead of engineering value.
 
 ## 🚀 Installation
 
-Pick one — every option takes under 30 seconds.
+Pick the direct script one-liner that matches your operating system terminal shell to
+install `slim-context` globally in under 10 seconds:
 
-### Option A · Project-level (recommended)
-
-The skill travels with your repository, so every collaborator using Claude Code benefits automatically.
+### 🌐 Linux / macOS (Bash/Zsh)
 
 ```bash
-# from the root of this cloned repo
-mkdir -p /path/to/your-project/.claude/skills
-cp -R .claude/skills/slim-context /path/to/your-project/.claude/skills/
+mkdir -p ~/.claude/skills/slim-context && curl -fsSL https://raw.githubusercontent.com/HSF237/slim-context/main/.claude/skills/slim-context/SKILL.md -o ~/.claude/skills/slim-context/SKILL.md
 ```
+
+### 🪟 Windows (PowerShell)
 
 ```powershell
-# Windows (PowerShell)
-New-Item -ItemType Directory -Force your-project\.claude\skills | Out-Null
-Copy-Item -Recurse .claude\skills\slim-context your-project\.claude\skills\
+New-Item -ItemType Directory -Force "$HOME\.claude\skills\slim-context" | Out-Null; Invoke-WebRequest -UseBasicParsing -Uri "https://raw.githubusercontent.com/HSF237/slim-context/main/.claude/skills/slim-context/SKILL.md" -OutFile "$HOME\.claude\skills\slim-context\SKILL.md"
 ```
 
-### Option B · User-level (all your projects)
-
-```bash
-mkdir -p ~/.claude/skills
-cp -R .claude/skills/slim-context ~/.claude/skills/
-```
-
-### Option C · Single-file drop
-
-Grab [`SKILL.md`](./.claude/skills/slim-context/SKILL.md) and place it anywhere in this layout:
-
-```text
-your-project/
-└── .claude/
-    └── skills/
-        └── slim-context/
-            └── SKILL.md    ← the entire skill
-```
-
-Restart your Claude Code session and type `/slim-context`. That's it — nothing to configure, no
-dependency to install, no hook to register.
+Restart your Claude Code session and run `/slim-context`. That's it — nothing to configure,
+no dependency to install, no hook to register.
 
 ## 🧪 60-second smoke test
 
